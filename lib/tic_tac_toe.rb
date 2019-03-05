@@ -41,4 +41,14 @@ class TicTacToe
     false
   end
   
+  def turn_count
+    turn = 0
+    @board.each {|t| turn += 1 if t != " "}
+    turn
+  end
+  
+  def current_player
+    turn_count(@board).even? ? "X" : "O"
+  end
+  
 end
