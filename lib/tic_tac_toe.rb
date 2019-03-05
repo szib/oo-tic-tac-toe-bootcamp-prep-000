@@ -59,7 +59,7 @@ class TicTacToe
       move(idx, current_player
       display_board
     else
-      turn
+      self.turn
     end
   end
   
