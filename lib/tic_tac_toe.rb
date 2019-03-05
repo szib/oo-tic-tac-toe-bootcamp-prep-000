@@ -12,7 +12,15 @@ class TicTacToe
   
   def initialize
     @board = Array.new(9," ")
-    
+  end
+  
+  def display_board
+    separator = "-" * 11
+    printed_board = @board.map { |tile| " #{tile} " }
+      .map.with_index { |tile, idx| idx % 3 === 1 ? "|#{tile}|" : tile }
+      .map!.with_index { |tile, idx| [2,5].include?(idx) ? "#{tile}\n#{separator}\n" : tile }
+      .join
+    puts printed_board
   end
   
 end
