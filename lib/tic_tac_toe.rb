@@ -29,7 +29,6 @@ class TicTacToe
   
   def move(idx, player)
     @board[idx] = player
-    # return board
   end 
   
 end
