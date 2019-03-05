@@ -27,4 +27,9 @@ class TicTacToe
      number.to_i - 1
   end
   
+  def move(idx, player)
+    @board[idx] = player
+    # return board
+  end 
+  
 end
