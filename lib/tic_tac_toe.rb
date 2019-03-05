@@ -56,7 +56,7 @@ class TicTacToe
     answer = gets.strip
     idx = input_to_index(answer)
     if valid_move?(idx)
-      move(idx, current_player
+      move(idx, current_player)
       display_board
     else
       turn
