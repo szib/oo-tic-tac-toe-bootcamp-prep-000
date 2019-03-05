@@ -63,4 +63,30 @@ class TicTacToe
     end
   end
   
+  def won?(board)
+    WIN_COMBINATIONS.each do |win_combination|
+      combo = win_combination.map { |x| board[x] }
+      return win_combination if combo.all? { |w| w == "X" } || combo.all? { |w| w == "O" }
+    end
+    return false
+  end
+  
+  def full?(board)
+    board.all? { |x| x == "X" || x == "O" }
+  end
+  
+  def draw?(board)
+    full?(board) && !won?(board)
+  end
+  
+  def over?(board)
+    won?(board) || draw?(board) || full?(board)
+  end
+  
+  def winner(board)
+    winning_combination = won?(board)
+    return nil unless winning_combination
+    board[winning_combination[0]]
+  end
+  
 end
